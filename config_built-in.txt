@@ -1,0 +1,106 @@
+
+
+numpy configuration:
+
+
+openblas64__info:
+    libraries = ['openblas64_', 'openblas64_']
+    library_dirs = ['/usr/local/lib']
+    language = c
+    define_macros = [('HAVE_CBLAS', None), ('BLAS_SYMBOL_SUFFIX', '64_'), ('HAVE_BLAS_ILP64', None)]
+    runtime_library_dirs = ['/usr/local/lib']
+blas_ilp64_opt_info:
+    libraries = ['openblas64_', 'openblas64_']
+    library_dirs = ['/usr/local/lib']
+    language = c
+    define_macros = [('HAVE_CBLAS', None), ('BLAS_SYMBOL_SUFFIX', '64_'), ('HAVE_BLAS_ILP64', None)]
+    runtime_library_dirs = ['/usr/local/lib']
+openblas64__lapack_info:
+    libraries = ['openblas64_', 'openblas64_']
+    library_dirs = ['/usr/local/lib']
+    language = c
+    define_macros = [('HAVE_CBLAS', None), ('BLAS_SYMBOL_SUFFIX', '64_'), ('HAVE_BLAS_ILP64', None), ('HAVE_LAPACKE', None)]
+    runtime_library_dirs = ['/usr/local/lib']
+lapack_ilp64_opt_info:
+    libraries = ['openblas64_', 'openblas64_']
+    library_dirs = ['/usr/local/lib']
+    language = c
+    define_macros = [('HAVE_CBLAS', None), ('BLAS_SYMBOL_SUFFIX', '64_'), ('HAVE_BLAS_ILP64', None), ('HAVE_LAPACKE', None)]
+    runtime_library_dirs = ['/usr/local/lib']
+Supported SIMD extensions in this NumPy install:
+    baseline = NEON,NEON_FP16,NEON_VFPV4,ASIMD
+    found = ASIMDHP,ASIMDDP
+    not found = ASIMDFHM
+None
+
+
+scipy configuration:
+
+
+Build Dependencies:
+  blas:
+    detection method: pkgconfig
+    found: true
+    include directory: /opt/arm64-builds/include
+    lib directory: /opt/arm64-builds/lib
+    name: openblas
+    openblas configuration: USE_64BITINT= DYNAMIC_ARCH=1 DYNAMIC_OLDER= NO_CBLAS=
+      NO_LAPACK= NO_LAPACKE= NO_AFFINITY=1 USE_OPENMP= SANDYBRIDGE MAX_THREADS=3
+    pc file directory: /opt/arm64-builds/lib/pkgconfig
+    version: 0.3.21.dev
+  lapack:
+    detection method: pkgconfig
+    found: true
+    include directory: /opt/arm64-builds/include
+    lib directory: /opt/arm64-builds/lib
+    name: openblas
+    openblas configuration: USE_64BITINT= DYNAMIC_ARCH=1 DYNAMIC_OLDER= NO_CBLAS=
+      NO_LAPACK= NO_LAPACKE= NO_AFFINITY=1 USE_OPENMP= SANDYBRIDGE MAX_THREADS=3
+    pc file directory: /opt/arm64-builds/lib/pkgconfig
+    version: 0.3.21.dev
+  pybind11:
+    detection method: config-tool
+    include directory: unknown
+    name: pybind11
+    version: 2.10.4
+Compilers:
+  c:
+    commands: cc
+    linker: ld64
+    name: clang
+    version: 14.0.0
+  c++:
+    commands: c++
+    linker: ld64
+    name: clang
+    version: 14.0.0
+  cython:
+    commands: cython
+    linker: cython
+    name: cython
+    version: 0.29.35
+  fortran:
+    commands: gfortran
+    linker: ld64
+    name: gcc
+    version: 12.1.0
+  pythran:
+    include directory: ../../pip-build-env-cdkorw9p/overlay/lib/python3.9/site-packages/pythran
+    version: 0.13.1
+Machine Information:
+  build:
+    cpu: aarch64
+    endian: little
+    family: aarch64
+    system: darwin
+  cross-compiled: false
+  host:
+    cpu: aarch64
+    endian: little
+    family: aarch64
+    system: darwin
+Python Information:
+  path: /private/var/folders/76/zy5ktkns50v6gt5g8r0sf6sc0000gn/T/cibw-run-hskkrmab/cp39-macosx_arm64/build/venv/bin/python
+  version: '3.9'
+
+None
