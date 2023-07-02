@@ -1,0 +1,138 @@
+----------------------------------------------
+Numpy configuration
+----------------------------------------------
+
+
+blas_info:
+    libraries = ['cblas', 'blas', 'cblas', 'blas']
+    library_dirs = ['/Users/duosifan/study/programming/python/python_apple_silicon/.conda_accelerate/lib']
+    include_dirs = ['/Users/duosifan/study/programming/python/python_apple_silicon/.conda_accelerate/include']
+    language = c
+    define_macros = [('HAVE_CBLAS', None)]
+blas_opt_info:
+    define_macros = [('NO_ATLAS_INFO', 1), ('HAVE_CBLAS', None)]
+    libraries = ['cblas', 'blas', 'cblas', 'blas']
+    library_dirs = ['/Users/duosifan/study/programming/python/python_apple_silicon/.conda_accelerate/lib']
+    include_dirs = ['/Users/duosifan/study/programming/python/python_apple_silicon/.conda_accelerate/include']
+    language = c
+lapack_info:
+    libraries = ['lapack', 'blas', 'lapack', 'blas']
+    library_dirs = ['/Users/duosifan/study/programming/python/python_apple_silicon/.conda_accelerate/lib']
+    language = f77
+lapack_opt_info:
+    libraries = ['lapack', 'blas', 'lapack', 'blas', 'cblas', 'blas', 'cblas', 'blas']
+    library_dirs = ['/Users/duosifan/study/programming/python/python_apple_silicon/.conda_accelerate/lib']
+    language = c
+    define_macros = [('NO_ATLAS_INFO', 1), ('HAVE_CBLAS', None)]
+    include_dirs = ['/Users/duosifan/study/programming/python/python_apple_silicon/.conda_accelerate/include']
+Supported SIMD extensions in this NumPy install:
+    baseline = NEON,NEON_FP16,NEON_VFPV4,ASIMD
+    found = ASIMDHP,ASIMDDP
+    not found = ASIMDFHM
+None
+
+
+
+----------------------------------------------
+Scipy configuration
+----------------------------------------------
+
+
+Build Dependencies:
+  blas:
+    detection method: pkgconfig
+    found: true
+    include directory: /Users/duosifan/study/programming/python/python_apple_silicon/.conda_accelerate/include
+    lib directory: /Users/duosifan/study/programming/python/python_apple_silicon/.conda_accelerate/lib
+    name: blas
+    openblas configuration: unknown
+    pc file directory: /Users/duosifan/study/programming/python/python_apple_silicon/.conda_accelerate/lib/pkgconfig
+    version: 3.9.0
+  lapack:
+    detection method: pkgconfig
+    found: true
+    include directory: /Users/duosifan/study/programming/python/python_apple_silicon/.conda_accelerate/include
+    lib directory: /Users/duosifan/study/programming/python/python_apple_silicon/.conda_accelerate/lib
+    name: lapack
+    openblas configuration: unknown
+    pc file directory: /Users/duosifan/study/programming/python/python_apple_silicon/.conda_accelerate/lib/pkgconfig
+    version: 3.9.0
+  pybind11:
+    detection method: pkgconfig
+    include directory: /Users/duosifan/study/programming/python/python_apple_silicon/.conda_accelerate/include
+    name: pybind11
+    version: 2.10.4
+Compilers:
+  c:
+    commands: arm64-apple-darwin20.0.0-clang
+    linker: ld64
+    name: clang
+    version: 15.0.7
+  c++:
+    commands: arm64-apple-darwin20.0.0-clang++
+    linker: ld64
+    name: clang
+    version: 15.0.7
+  cython:
+    commands: cython
+    linker: cython
+    name: cython
+    version: 0.29.35
+  fortran:
+    commands: /Users/runner/miniforge3/conda-bld/scipy-split_1687995684757/_build_env/bin/arm64-apple-darwin20.0.0-gfortran
+    linker: ld64
+    name: gcc
+    version: 12.2.0
+  pythran:
+    include directory: ../../../_build_env/venv/lib/python3.11/site-packages/pythran
+    version: 0.13.1
+Machine Information:
+  build:
+    cpu: x86_64
+    endian: little
+    family: x86_64
+    system: darwin
+  cross-compiled: true
+  host:
+    cpu: arm64
+    endian: little
+    family: aarch64
+    system: darwin
+Python Information:
+  path: /Users/duosifan/study/programming/python/python_apple_silicon/.conda_accelerate/bin/python
+  version: '3.11'
+
+None
+
+
+
+----------------------------------------------
+Running benchmark_numpy_svd:
+----------------------------------------------
+
+
+mean of 10 runs: 0.80749s
+
+
+
+----------------------------------------------
+Running benchmark_scipy_svd:
+----------------------------------------------
+
+
+mean of 10 runs: 0.81048s
+
+
+
+----------------------------------------------
+Running benchmark_numpy_dario:
+----------------------------------------------
+
+
+Dotted two 4096x4096 matrices in 0.24s. (averaged by 20 runs)
+Dotted two vectors of length 524288 in 0.10ms. (averaged by 5000 runs)
+SVD of a 2048x1024 matrix in 0.28s. (averaged by 3 runs)
+Cholesky decomposition of a 2048x2048 matrix in 0.06s. (averaged by 3 runs)
+Eigendecomposition of a 2048x2048 matrix in 3.22s. (averaged by 3 runs)
+
+Total scripting time : 16.24s

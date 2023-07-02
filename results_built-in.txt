@@ -1,6 +1,6 @@
-
-
-numpy configuration:
+----------------------------------------------
+Numpy configuration
+----------------------------------------------
 
 
 openblas64__info:
@@ -34,7 +34,10 @@ Supported SIMD extensions in this NumPy install:
 None
 
 
-scipy configuration:
+
+----------------------------------------------
+Scipy configuration
+----------------------------------------------
 
 
 Build Dependencies:
@@ -104,3 +107,36 @@ Python Information:
   version: '3.9'
 
 None
+
+
+
+----------------------------------------------
+Running benchmark_numpy_svd:
+----------------------------------------------
+
+
+mean of 10 runs: 2.12734s
+
+
+
+----------------------------------------------
+Running benchmark_scipy_svd:
+----------------------------------------------
+
+
+mean of 10 runs: 1.94379s
+
+
+
+----------------------------------------------
+Running benchmark_numpy_dario:
+----------------------------------------------
+
+
+Dotted two 4096x4096 matrices in 0.60s. (averaged by 20 runs)
+Dotted two vectors of length 524288 in 0.24ms. (averaged by 5000 runs)
+SVD of a 2048x1024 matrix in 0.73s. (averaged by 3 runs)
+Cholesky decomposition of a 2048x2048 matrix in 0.08s. (averaged by 3 runs)
+Eigendecomposition of a 2048x2048 matrix in 5.28s. (averaged by 3 runs)
+
+Total scripting time : 31.86s
